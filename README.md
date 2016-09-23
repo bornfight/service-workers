@@ -5,8 +5,7 @@ Simple helper library for working with service workers. There are two main thing
 1. SSL is a requirement.
 2. You have scoped access, so your *worker.js* needs to be in your root.
  
- 
- ## Main thread
+## Main thread
  
  On your main thread, you need to include *main-thread/ServiceWorker.js*.
  
