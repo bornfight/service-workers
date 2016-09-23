@@ -23,7 +23,7 @@ Simple helper library for working with service workers. There are two main thing
  That's it on your main thread.
  
  
- ## Service worker thread
+## Service worker thread
  
  There are few things that need to be done on this thread:
  1. Include workers definitions.
@@ -32,12 +32,12 @@ Simple helper library for working with service workers. There are two main thing
  
  
 
- Definition of workers is in *service-workers.js* file.
+Definition of workers is in *service-workers.js* file.
  ```javascript
  importScripts('/path/to/service-workers.js');
  ```
 
- It's good practice to set constants for further usage. Also, don't forget to pass context to worker.
+It's good practice to set constants for further usage. Also, don't forget to pass context to worker.
  ```javascript
  var baseUrl = "https://your.base.url";
  var context = self;
@@ -53,19 +53,19 @@ Simple helper library for working with service workers. There are two main thing
  worker.init();
  ```
  
- Worker defined like this knows how to work with following interfaces:
+Worker defined like this knows how to work with following interfaces:
  1. _**Installable**_
  2. _**Activable**_
  3. _**Fetchable**_
  4. _**Syncable**_
  
- _**Pushable**_ will be added in future builds. Each of this represent a single event in life cycle.
+_**Pushable**_ will be added in future builds. Each of this represent a single event in life cycle.
+
+All interfaces have _getRoutes_ function and if there is a match with an event, worker will be called and _event_ object will be passed to it. 
  
- All interfaces have _getRoutes_ function and if there is a match with an event, worker will be called and _event_ object will be passed to it. 
+**ONLY FETCHABLE KNOW HOW TO DEAL WITH REGEX!**
  
- **ONLY FETCHABLE KNOW HOW TO DEAL WITH REGEX!**
- 
- There is a certain amount of implemented content serving methods.
+There is a certain amount of implemented content serving methods.
  Here is a list of those implemented.
  
  Worker name | Constructor | Description | Interfaces
